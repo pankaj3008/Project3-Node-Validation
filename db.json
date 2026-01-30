@@ -1,0 +1,24 @@
+[
+  {
+    "ID": 1,
+    "Name": "Inception",
+    "Rating": 8.8,
+    "Description": "A sci-fi movie",
+    "Genre": "Action",
+    "Cast": [
+      "Leonardo DiCaprio",
+      "Joseph Gordon-Levitt"
+    ]
+  },
+  {
+    "ID": 2,
+    "Name": "RRR",
+    "Rating": 8.8,
+    "Description": "A history",
+    "Genre": "Action",
+    "Cast": [
+      "Ram Charan",
+      "Jr. NTR"
+    ]
+  }
+]
