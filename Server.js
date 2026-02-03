@@ -51,7 +51,7 @@ next();
 }
 
 
-app.post("/post", validation, async (req, res) => {
+app.post("/post", validation, async (req, res,next) => {
     try{
         let data = await fs.readFile("./db.json" , "utf-8");
         let result = JSON.parse(data);
@@ -62,7 +62,7 @@ app.post("/post", validation, async (req, res) => {
 
         res.json({message: "Data add successfully", success : true});
     }catch(e){
-        res.json({message: e.message, success : false});
+        next(e); 
 
     }
 })
@@ -72,10 +72,10 @@ app.post("/post", validation, async (req, res) => {
 
 
 
-
-app.use((req,res)=>{
-    res.status(404).json({error:"404 not found" });
-})
+app.use((err, req, res, next) => {
+  console.error(err.message);
+  res.status(500).json({ message: 'Server error' });
+});
 
 
 app.listen(Port, ()=>{
